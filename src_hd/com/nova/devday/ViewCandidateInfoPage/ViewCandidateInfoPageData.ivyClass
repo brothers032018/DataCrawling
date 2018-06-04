@@ -1,0 +1,6 @@
+ViewCandidateInfoPageData #class
+com.nova.devday.ViewCandidateInfoPage #namespace
+excelFileStreamContent org.primefaces.model.StreamedContent #field
+excelFileStreamContent PERSISTENT #fieldModifier
+candidateInfos java.util.List<com.nova.devday.CandidateInfo> #field
+candidateInfos PERSISTENT #fieldModifier

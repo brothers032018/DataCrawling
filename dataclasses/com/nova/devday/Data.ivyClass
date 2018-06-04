@@ -1,0 +1,4 @@
+Data #class
+com.nova.devday #namespace
+crawlingEmail com.nova.devday.CrawlingEmail #field
+crawlingEmail PERSISTENT #fieldModifier

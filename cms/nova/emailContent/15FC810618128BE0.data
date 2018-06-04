@@ -1,0 +1,29 @@
+<P>
+Hi HR Team
+</P>
+<P>
+Here are some candidates just update CV:
+</P>
+<table style="border: 1px solid black; border-collapse: collapse;">
+<tr  style="border: 1px solid black">
+<td  style="border: 1px solid black; font-weight:bold;">
+	Current position
+</td>
+<td  style="border: 1px solid black; font-weight:bold;">
+	Expected salary
+</td>
+<td  style="border: 1px solid black; font-weight:bold;">
+	Years of experience
+</td>
+</tr>
+{content}
+</table> 
+<P>
+Please click to this <A href="http://localhost:8081/ivy/pro/designer/NovaDevday/15FC2FE31081B441/startViewInfo.ivp">link</A> for more details. 
+</P>
+<P>
+Thanks,
+</P>
+<P>
+Nova Team.
+</P>
