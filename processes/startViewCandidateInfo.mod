@@ -20,7 +20,7 @@ so0 @PushWFArc f14 '' #zField
 >Proto so0 so0 startViewCandidateInfo #zField
 so0 f11 targetWindow NEW:card: #txt
 so0 f11 targetDisplay TOP #txt
-so0 f11 richDialogId com.nova.devday.ViewCandidateInfoPage #txt
+so0 f11 richDialogId com.aavn.sharing.ViewCandidateInfoPage #txt
 so0 f11 startMethod start() #txt
 so0 f11 type com.nova.devday.Data #txt
 so0 f11 requestActionDecl '<> param;' #txt

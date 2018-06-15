@@ -26,7 +26,7 @@ Vs0 @PushWFArc f9 '' #zField
 Vs0 @PushWFArc f4 '' #zField
 >Proto Vs0 Vs0 ViewCandidateInfoPageProcess #zField
 Vs0 f0 guid 15FC28DA7C1D3E88 #txt
-Vs0 f0 type com.nova.devday.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
+Vs0 f0 type com.aavn.sharing.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
 Vs0 f0 method start() #txt
 Vs0 f0 disableUIEvents true #txt
 Vs0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
@@ -43,10 +43,10 @@ Vs0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 Vs0 f0 83 51 26 26 -16 15 #rect
 Vs0 f0 @|RichDialogInitStartIcon #fIcon
-Vs0 f1 type com.nova.devday.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
+Vs0 f1 type com.aavn.sharing.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
 Vs0 f1 339 51 26 26 0 12 #rect
 Vs0 f1 @|RichDialogProcessEndIcon #fIcon
-Vs0 f6 actionDecl 'com.nova.devday.ViewCandidateInfoPage.ViewCandidateInfoPageData out;
+Vs0 f6 actionDecl 'com.aavn.sharing.ViewCandidateInfoPage.ViewCandidateInfoPageData out;
 ' #txt
 Vs0 f6 actionTable 'out=in;
 ' #txt
@@ -55,9 +55,8 @@ import java.util.ArrayList;
 import com.nova.devday.CandidateInfo;
 
 CrawlingPersistentService crawlingPersistentService = new CrawlingPersistentService();
-in.candidateInfos = crawlingPersistentService.getCandidateInfoList();
-' #txt
-Vs0 f6 type com.nova.devday.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
+in.candidateInfos = crawlingPersistentService.getCandidateInfoList();' #txt
+Vs0 f6 type com.aavn.sharing.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
 Vs0 f6 168 42 112 44 0 -8 #rect
 Vs0 f6 @|StepIcon #fIcon
 Vs0 f7 expr out #txt
@@ -65,8 +64,8 @@ Vs0 f7 109 64 168 64 #arcP
 Vs0 f2 expr out #txt
 Vs0 f2 280 64 339 64 #arcP
 Vs0 f8 guid 15FC3C94A46A8506 #txt
-Vs0 f8 type com.nova.devday.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
-Vs0 f8 actionDecl 'com.nova.devday.ViewCandidateInfoPage.ViewCandidateInfoPageData out;
+Vs0 f8 type com.aavn.sharing.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
+Vs0 f8 actionDecl 'com.aavn.sharing.ViewCandidateInfoPage.ViewCandidateInfoPageData out;
 ' #txt
 Vs0 f8 actionTable 'out=in;
 ' #txt
@@ -81,10 +80,10 @@ Vs0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 Vs0 f8 83 163 26 26 -51 15 #rect
 Vs0 f8 @|RichDialogProcessStartIcon #fIcon
-Vs0 f3 type com.nova.devday.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
+Vs0 f3 type com.aavn.sharing.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
 Vs0 f3 339 163 26 26 0 12 #rect
 Vs0 f3 @|RichDialogProcessEndIcon #fIcon
-Vs0 f5 actionDecl 'com.nova.devday.ViewCandidateInfoPage.ViewCandidateInfoPageData out;
+Vs0 f5 actionDecl 'com.aavn.sharing.ViewCandidateInfoPage.ViewCandidateInfoPageData out;
 ' #txt
 Vs0 f5 actionTable 'out=in;
 ' #txt
@@ -94,7 +93,7 @@ import aavn.knowledge.sharing.service.ExportingExcelFileService;
 java.io.File excelFile = ExportingExcelFileService.buildExcelFile(in.candidateInfos);
 in.excelFileStreamContent = null;
 in.excelFileStreamContent = ExportingExcelFileUtils.generateStreamContent(excelFile);' #txt
-Vs0 f5 type com.nova.devday.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
+Vs0 f5 type com.aavn.sharing.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
 Vs0 f5 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -110,7 +109,7 @@ Vs0 f9 expr out #txt
 Vs0 f9 109 176 168 176 #arcP
 Vs0 f4 expr out #txt
 Vs0 f4 280 176 339 176 #arcP
->Proto Vs0 .type com.nova.devday.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
+>Proto Vs0 .type com.aavn.sharing.ViewCandidateInfoPage.ViewCandidateInfoPageData #txt
 >Proto Vs0 .processKind HTML_DIALOG #txt
 >Proto Vs0 -8 -8 16 16 16 26 #rect
 >Proto Vs0 '' #fIcon
