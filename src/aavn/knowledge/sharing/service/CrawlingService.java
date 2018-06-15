@@ -70,7 +70,7 @@ public class CrawlingService {
 				updateConfigurationInfo(candidateInfo, login, employeePage, pageNo, candidateNo, employeeLink);
 				crawlBasicCandidateInfo(candidateInfo, employeePage);
 				Ivy.log().info(candidateInfo);
-			//	crawlingPersistentService.saveOrUpdate(candidateInfo);
+				crawlingPersistentService.saveOrUpdate(candidateInfo);
 			}
 		}
 	}
