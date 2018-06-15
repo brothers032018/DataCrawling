@@ -1,4 +1,4 @@
-package nova.devday.persistent;
+package aavn.knowledge.sharing.persistent;
 
 import java.util.List;
 

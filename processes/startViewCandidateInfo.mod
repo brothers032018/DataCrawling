@@ -1,6 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 16 11:05:15 ICT 2017]
-15FC2FE31081B441 3.18 #module
+15FC2FE31081B441 3.20 #module
 >Proto >Proto Collection #zClass
 so0 startViewCandidateInfo Big #zClass
 so0 B #cInfo
@@ -42,7 +41,7 @@ so0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-so0 f11 183 150 144 44 -66 -8 #rect
+so0 f11 279 150 144 44 -66 -8 #rect
 so0 f11 @|RichDialogIcon #fIcon
 so0 f13 type com.nova.devday.Data #txt
 so0 f13 596 157 30 30 0 15 #rect
@@ -64,15 +63,6 @@ TaskTriggered.TYPE=0
 TaskTriggered.PRI=2
 TaskTriggered.EXROL=Everybody' #txt
 so0 f9 showInStartList 1 #txt
-so0 f9 taskAndCaseSetupAction 'import ch.ivyteam.ivy.workflow.TaskUpdateDefinition;
-ch.ivyteam.ivy.workflow.TaskUpdateDefinition taskUpdDef = new ch.ivyteam.ivy.workflow.TaskUpdateDefinition();
-import ch.ivyteam.ivy.request.impl.DefaultCalendarProxy;
-DefaultCalendarProxy calendarProxy = ivy.cal as DefaultCalendarProxy;
-taskUpdDef.setPriority(ch.ivyteam.ivy.workflow.WorkflowPriority.valueOf(2));
-taskUpdDef.setExpiryActivator("Everybody");
-taskUpdDef.setExpiryPriority(ch.ivyteam.ivy.workflow.WorkflowPriority.valueOf(2));
-engine.updateCurrentTask(taskUpdDef);
-' #txt
 so0 f9 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -86,9 +76,9 @@ so0 f9 @C|.responsibility Everybody #txt
 so0 f9 80 157 30 30 -44 17 #rect
 so0 f9 @|StartRequestIcon #fIcon
 so0 f12 expr out #txt
-so0 f12 110 172 183 172 #arcP
+so0 f12 110 172 279 172 #arcP
 so0 f14 expr out #txt
-so0 f14 327 172 596 172 #arcP
+so0 f14 423 172 596 172 #arcP
 >Proto so0 .type com.nova.devday.Data #txt
 >Proto so0 .processKind NORMAL #txt
 >Proto so0 0 0 32 24 18 0 #rect

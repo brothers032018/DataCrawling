@@ -1,4 +1,4 @@
-package nova.devday;
+package aavn.knowledge.sharing;
 
 import org.apache.commons.lang3.StringUtils;
 

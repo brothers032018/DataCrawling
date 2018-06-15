@@ -1,4 +1,4 @@
-package nova.devday.utils;
+package aavn.knowledge.sharing.utils;
 
 import java.text.DateFormat;
 import java.text.ParseException;

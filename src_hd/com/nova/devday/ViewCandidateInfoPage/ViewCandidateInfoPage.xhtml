@@ -11,20 +11,14 @@
 		<ui:define name="title">ViewCandidateInfo</ui:define>
 		<ui:define name="content">
 			<h:form id="viewCandidateInfoForm">
-				<h3>View Candidate Info</h3>
-				<h:panelGroup layout="block" styleClass="export-excel">
-					<p:commandButton
-						value="Export Excel File"
-						actionListener="#{logic.downloadExcelFile}" ajax="false">
-						<p:fileDownload value="#{data.excelFileStreamContent}" />
-					</p:commandButton>
-				</h:panelGroup>
+				<!-- <h3>View Candidate Info</h3> -->
+				
 				<p:dataTable value="#{data.candidateInfos}" var="candidate" widgetVar="candidate"
 					rows="10" paginator="true"
 					paginatorPosition="bottom"
 					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 					rowsPerPageTemplate="5,10,15" rowIndexVar="rowIndex"
-					reflow="true" >
+					reflow="true">
 					
 					<p:column style="width: 50px" headerText="No." >
 						<h:outputText value="#{rowIndex + 1}" />
@@ -71,9 +65,9 @@
 							</p:panelGrid>
 						</p:tooltip>
 					</p:column>
-					<p:column headerText="Expected Salary" sortBy="#{candidate.minimumExpectedSalary}">
+					<!-- <p:column headerText="Expected Salary" sortBy="#{candidate.minimumExpectedSalary}">
 						<h:outputText value="#{candidate.minimumExpectedSalary == '' ? 'Negotiable' : candidate.minimumExpectedSalary}" />
-					</p:column>
+					</p:column> -->
 					<p:column headerText="Experience" >
 						<h:outputText value="#{candidate.yearsOfExperience}" />
 					</p:column>
@@ -94,6 +88,13 @@
 						</h:outputLink>
 					</p:column>
 				</p:dataTable>
+				<h:panelGroup layout="block" styleClass="export-excel">
+					<p:commandButton icon="ui-icon-disk"
+						value="Export Excel File" styleClass="ui-priority-primary"
+						actionListener="#{logic.downloadExcelFile}" ajax="false">
+						<p:fileDownload value="#{data.excelFileStreamContent}" />
+					</p:commandButton>
+				</h:panelGroup>
 			</h:form>
 		</ui:define>
 	</ui:composition>

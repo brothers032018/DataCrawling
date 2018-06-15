@@ -1,9 +1,9 @@
-package nova.devday;
+package aavn.knowledge.sharing;
 
 
 import java.util.List;
 
-import nova.devday.persistent.CrawlingPersistentService;
+import aavn.knowledge.sharing.persistent.CrawlingPersistentService;
 
 import com.nova.devday.CandidateInfo;
 import com.nova.devday.CrawlingEmail;

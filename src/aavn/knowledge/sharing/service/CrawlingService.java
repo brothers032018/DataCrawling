@@ -1,4 +1,4 @@
-package nova.devday.service;
+package aavn.knowledge.sharing.service;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -14,13 +14,16 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+
+
 import com.nova.devday.CandidateInfo;
 
 import ch.ivyteam.ivy.environment.Ivy;
-import nova.devday.QueryService;
-import nova.devday.persistent.CrawlingPersistentService;
+import aavn.knowledge.sharing.QueryService;
+import aavn.knowledge.sharing.persistent.CrawlingPersistentService;
 
-public class TestService {
+public class CrawlingService {
+	
 	private static final String SERVER_HOST = "https://employer.vietnamworks.com";
 	private static final String PASSWORD_VALUE = Ivy.var().get("account_login_password");
 	private static final String PASSWORD_KEY = "_password";
@@ -28,23 +31,23 @@ public class TestService {
 	private static final String USERNAME_KEY = "_username";
 	private static final String LOGIN_FORM = SERVER_HOST + "/v2/login_check";
 	private static final String LOGIN_LINK = SERVER_HOST + "/v2/login";
-	static CrawlingPersistentService crawlingPersistentService = new CrawlingPersistentService();
 	
+	static CrawlingPersistentService crawlingPersistentService = new CrawlingPersistentService();
 
 	public static void crawlData() throws IOException, ParseException {
-		 String QUERY_STRING = QueryService.buildQuery();
+		 String queryUrl = QueryService.buildQuery();
 		Connection.Response login = initEnvironment();
-		// For page 1
-		crawlDataFromUrl(login, QUERY_STRING, 1);
-		// For other pages
-		Document pageContent = connectWebServer(login, QUERY_STRING);
+		// Craw information from page 1
+		crawlDataFromUrl(login, queryUrl, 1);
+		// Craw information from other pages
+		/*Document pageContent = connectWebServer(login, QUERY_STRING);
 		Elements paginationPanel = pageContent.select("div[class=pagination btn-group");
 		Elements paginations = paginationPanel.select("button[data-url]");
 		Integer pageNo = 1;
 		for (Element pagination : paginations) {
 			pageNo++;
-			//crawlDataFromUrl(login, SERVER_HOST + pagination.attr("data-url"), pageNo);
-		}
+			crawlDataFromUrl(login, SERVER_HOST + pagination.attr("data-url"), pageNo);
+		}*/
 	}
 
 	private static Connection.Response initEnvironment() throws IOException {
@@ -63,20 +66,24 @@ public class TestService {
 			if (employeeLink.attr("href").contains("resume/detail")) {
 				candidateNo++;
 				CandidateInfo candidateInfo = new CandidateInfo();
-				candidateInfo.setCandidateId(getCandidateId(employeeLink));
-				candidateInfo.setProfileLink(SERVER_HOST + employeeLink.attr("href"));
-				candidateInfo.setPageNo(pageNo);
-				candidateInfo.setCandidateNo(candidateNo);
 				Document employeePage = connectWebServer(login, SERVER_HOST + employeeLink.attr("href"));
-				candidateInfo.setUpdatedDate(getUpdatedDate(employeePage));
-				candidateInfo.setContactLink(getContactLink(employeePage));
-				candidateInfo.setImageLink(getImageLink(employeePage));
-				crawlCandidateInfo(candidateInfo, employeePage);
+				updateConfigurationInfo(candidateInfo, login, employeePage, pageNo, candidateNo, employeeLink);
+				crawlBasicCandidateInfo(candidateInfo, employeePage);
 				Ivy.log().info(candidateInfo);
-				crawlingPersistentService.saveOrUpdate(candidateInfo);
-//				break;
+			//	crawlingPersistentService.saveOrUpdate(candidateInfo);
 			}
 		}
+	}
+
+	private static void updateConfigurationInfo(CandidateInfo candidateInfo, Connection.Response login, Document employeePage, Integer pageNo,
+			int candidateNo, Element employeeLink) throws ParseException {
+		candidateInfo.setCandidateId(getCandidateId(employeeLink));
+		candidateInfo.setProfileLink(SERVER_HOST + employeeLink.attr("href"));
+		candidateInfo.setPageNo(pageNo);
+		candidateInfo.setCandidateNo(candidateNo);
+		candidateInfo.setUpdatedDate(getUpdatedDate(employeePage));
+		candidateInfo.setContactLink(getContactLink(employeePage));
+		candidateInfo.setImageLink(getImageLink(employeePage));
 	}
 
 	private static String getImageLink(Document employeePage) {
@@ -85,14 +92,14 @@ public class TestService {
 		return imageImgTab.attr("src");
 	}
 
-	private static void crawlCandidateInfo(CandidateInfo candidateInfo, Document employeePage) {
+	private static void crawlBasicCandidateInfo(CandidateInfo candidateInfo, Document employeePage) {
 		Elements infoTable = employeePage.select("table[class=table m-b-xs m-t");
 		int infoNo = 1;
 		for (Element row : infoTable.select("tr")) {
             Elements infoRows = row.select("td");
             for (Element infoRow : infoRows) {
     			if(infoNo % 2 == 0 ){
-    				initCandidateInfo(infoNo, candidateInfo, infoRow.text());
+    				updateCandidateInfoFromString(infoNo, candidateInfo, infoRow.text());
     			}
     			infoNo++;
     		}
@@ -121,13 +128,11 @@ public class TestService {
 		return date;
 	}
 
-	private static void initCandidateInfo(Integer i, CandidateInfo candidateInfo, String info) {
-//		Ivy.log().warn("infooooooooo:"+info);
+	private static void updateCandidateInfoFromString(Integer infoNo, CandidateInfo candidateInfo, String info) {
 		if(info==null||info.isEmpty() || info.contains("null")){
 			info ="N/A";
 		}
-		
-		switch (i) {
+		switch (infoNo) {
 		case 2:
 			candidateInfo.setHighestEducation(info);
 			break;

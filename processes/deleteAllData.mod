@@ -45,7 +45,7 @@ da0 f3 actionDecl 'com.nova.devday.Data out;
 ' #txt
 da0 f3 actionTable 'out=in;
 ' #txt
-da0 f3 actionCode 'import nova.devday.persistent.CrawlingPersistentService;
+da0 f3 actionCode 'import aavn.knowledge.sharing.persistent.CrawlingPersistentService;
 CrawlingPersistentService crawlingPersistentServicev= new CrawlingPersistentService();
 crawlingPersistentServicev.eraseDB();' #txt
 da0 f3 type com.nova.devday.Data #txt
