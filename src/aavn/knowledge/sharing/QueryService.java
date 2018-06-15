@@ -7,11 +7,11 @@ import ch.ivyteam.ivy.environment.Ivy;
 public class QueryService {
 
 	private static final String SERVER_HOST = "https://employer.vietnamworks.com";
-	private static String keyword = Ivy.var().get("com_nova_devday_query_keyword");
-	private static String industry = Ivy.var().get("com_nova_devday_query_industry");
+	private static String keyword = Ivy.var().get("aavn.knowledge.sharing_query_keyword");
+	private static String industry = Ivy.var().get("aavn.knowledge.sharing_query_industry");
 	private static String lastModified = Ivy.var().get(
 			"com_nova_devday_query_last_modified");
-	private static String location = Ivy.var().get("com_nova_devday_query_location");
+	private static String location = Ivy.var().get("aavn.knowledge.sharing_query_location");
 	private static String yearsOfExperience = Ivy.var().get(
 			"com_nova_devday_query_years_of_experience");
 	

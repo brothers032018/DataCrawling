@@ -3,20 +3,21 @@ package aavn.knowledge.sharing;
 
 import java.util.List;
 
-import aavn.knowledge.sharing.persistent.CrawlingPersistentService;
-
 import com.nova.devday.CandidateInfo;
 import com.nova.devday.CrawlingEmail;
+
+import aavn.knowledge.sharing.persistent.CrawlingPersistentService;
+
 
 import ch.ivyteam.ivy.environment.Ivy;
 
 
 public class MailSenderService {
 	
-	private String SENDER_MAIL = Ivy.var().get("com_nova_devday_sender_email");
-	private String RECEIVER_MAIL = Ivy.var().get("com_nova_devday_receiver_email");
-	private String EMAIL_SUBJECT = Ivy.cms().co("/nova/crawlingEmailSubject");
-	private String EMAIL_CONTENT_TEMPLATE = Ivy.cms().co("/nova/emailContent");
+	private String SENDER_MAIL = Ivy.var().get("aavn.knowledge.sharing_sender_email");
+	private String RECEIVER_MAIL = Ivy.var().get("aavn.knowledge.sharing_receiver_email");
+	private String EMAIL_SUBJECT = Ivy.cms().co("/aavn/crawlingEmailSubject");
+	private String EMAIL_CONTENT_TEMPLATE = Ivy.cms().co("/aavn/emailContent");
 	
 	public CrawlingEmail buildEmailObject()
 	{

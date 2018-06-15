@@ -9,8 +9,8 @@ public class CronJobService {
 	private static final String EVERY_DAY = "0";
 	private static final String COMMA = ",";
 	private static final String COLON = ":";
-	private static final String DAY_CRAWLING_DATA = "com_nova_devday_day_crawling_data";
-	private static final String TIME_CRAWLING_DATA = "com_nova_devday_time_crawling_data";
+	private static final String DAY_CRAWLING_DATA = "aavn.knowledge.sharing_day_crawling_data";
+	private static final String TIME_CRAWLING_DATA = "aavn.knowledge.sharing_time_crawling_data";
 
 	public CronJobService() {
 	}
