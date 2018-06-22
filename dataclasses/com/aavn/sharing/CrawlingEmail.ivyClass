@@ -1,5 +1,5 @@
 CrawlingEmail #class
-com.nova.devday #namespace
+com.aavn.sharing #namespace
 from String #field
 from PERSISTENT #fieldModifier
 to String #field

@@ -1,5 +1,5 @@
 CandidateInfo #class
-com.nova.devday #namespace
+com.aavn.sharing #namespace
 candidateId String #field
 candidateId PERSISTENT #fieldModifier
 profileLink String #field

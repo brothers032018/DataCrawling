@@ -2,7 +2,7 @@ package aavn.knowledge.sharing.persistent;
 
 import java.util.List;
 
-import com.nova.devday.CandidateInfo;
+import com.aavn.sharing.CandidateInfo;
 
 import ch.ivyteam.di.restricted.DiCore;
 import ch.ivyteam.ivy.business.data.store.restricted.BusinessDataPersistence;

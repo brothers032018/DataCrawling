@@ -6,20 +6,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.Connection.Method;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
-
-
-
-
-import com.nova.devday.CandidateInfo;
-
+import com.aavn.sharing.CandidateInfo;
 import ch.ivyteam.ivy.environment.Ivy;
 import aavn.knowledge.sharing.QueryService;
 import aavn.knowledge.sharing.persistent.CrawlingPersistentService;
@@ -42,7 +35,7 @@ public class CrawlingService {
 		// Craw information from page 1
 		crawlDataFromUrl(login, queryUrl, 1);
 		// Craw information from other pages
-		/*Document pageContent = connectWebServer(login, QUERY_STRING);
+		/*Document pageContent = connectWebServer(login, queryUrl);
 		Elements paginationPanel = pageContent.select("div[class=pagination btn-group");
 		Elements paginations = paginationPanel.select("button[data-url]");
 		Integer pageNo = 1;
@@ -73,6 +66,9 @@ public class CrawlingService {
 				crawlBasicCandidateInfo(candidateInfo, employeePage);
 				Ivy.log().info(candidateInfo);
 				crawlingPersistentService.saveOrUpdate(candidateInfo);
+				if (candidateNo > 10){
+					break;
+				}
 			}
 		}
 	}
@@ -160,7 +156,6 @@ public class CrawlingService {
 			candidateInfo.setExpectedJobLevel(info);
 			break;
 		case 18:
-			
 			candidateInfo.setJobLocations(info);
 			break;
 		case 20:
@@ -174,5 +169,4 @@ public class CrawlingService {
 
 		}
 	}
-	
 }

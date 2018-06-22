@@ -1,2 +1,2 @@
-co: name={aavn.knowledge.sharing_query_industry} description={} changed={2018-06-15 03:20:48 GMT} changedby={nvcuong01} visualorder={0} guid={15FC3E2D0EF97697} parentguid={} typeguid={1065A70222E84F59} id={} parentid={} typeid={}
-val: guid={15FC3E2D13ED3E10} datatype={} isdefault={true} langid={en} description={} validfrom={2017-11-16 08:12:22 GMT} validto={} changed={2017-11-16 08:15:39 GMT} changedby={hmtuan} properties={} id={}
+co: name={aavn.knowledge.sharing_query_industry} description={} changed={2018-06-22 09:03:39 GMT} changedby={nvcuong01} visualorder={0} guid={15FC3E2D0EF97697} parentguid={} typeguid={1065A70222E84F59} id={} parentid={} typeid={}
+val: guid={15FC3E2D13ED3E10} datatype={} isdefault={true} langid={en} description={} validfrom={2017-11-16 08:12:22 GMT} validto={} changed={2018-06-22 09:03:39 GMT} changedby={nvcuong01} properties={} id={}

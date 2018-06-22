@@ -52,7 +52,7 @@ Vs0 f6 actionTable 'out=in;
 ' #txt
 Vs0 f6 actionCode 'import aavn.knowledge.sharing.persistent.CrawlingPersistentService;
 import java.util.ArrayList;
-import com.nova.devday.CandidateInfo;
+import com.aavn.sharing.CandidateInfo;
 
 CrawlingPersistentService crawlingPersistentService = new CrawlingPersistentService();
 in.candidateInfos = crawlingPersistentService.getCandidateInfoList();' #txt

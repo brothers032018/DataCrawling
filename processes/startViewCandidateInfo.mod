@@ -43,13 +43,13 @@ so0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 so0 f11 279 150 144 44 -66 -8 #rect
 so0 f11 @|RichDialogIcon #fIcon
-so0 f13 type com.nova.devday.Data #txt
+so0 f13 type com.aavn.sharing.Data #txt
 so0 f13 596 157 30 30 0 15 #rect
 so0 f13 @|EndIcon #fIcon
 so0 f9 outLink startViewInfo.ivp #txt
-so0 f9 type com.nova.devday.Data #txt
+so0 f9 type com.aavn.sharing.Data #txt
 so0 f9 inParamDecl '<> param;' #txt
-so0 f9 actionDecl 'com.nova.devday.Data out;
+so0 f9 actionDecl 'com.aavn.sharing.Data out;
 ' #txt
 so0 f9 guid 15FC2FE55FAF8A61 #txt
 so0 f9 requestEnabled true #txt
@@ -79,7 +79,7 @@ so0 f12 expr out #txt
 so0 f12 110 172 279 172 #arcP
 so0 f14 expr out #txt
 so0 f14 423 172 596 172 #arcP
->Proto so0 .type com.nova.devday.Data #txt
+>Proto so0 .type com.aavn.sharing.Data #txt
 >Proto so0 .processKind NORMAL #txt
 >Proto so0 0 0 32 24 18 0 #rect
 >Proto so0 @|BIcon #fIcon

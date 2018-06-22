@@ -1,0 +1,4 @@
+Data #class
+com.aavn.sharing #namespace
+crawlingEmail com.aavn.sharing.CrawlingEmail #field
+crawlingEmail PERSISTENT #fieldModifier

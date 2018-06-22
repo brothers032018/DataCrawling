@@ -1,2 +1,2 @@
-co: name={account_login_email} description={} changed={2018-06-04 05:52:13 CEST} changedby={nvcuong01} visualorder={0} guid={15FC8CC2AC7CFAD7} parentguid={} typeguid={1065A70222E84F59} id={} parentid={} typeid={}
-val: guid={15FC8CC2B6D795A1} datatype={} isdefault={true} langid={en} description={} validfrom={2017-11-17 08:05:44 CET} validto={} changed={2018-06-04 05:52:13 CEST} changedby={nvcuong01} properties={} id={}
+co: name={account_login_email} description={} changed={2018-06-22 11:16:18 CEST} changedby={nvcuong01} visualorder={0} guid={15FC8CC2AC7CFAD7} parentguid={} typeguid={1065A70222E84F59} id={} parentid={} typeid={}
+val: guid={15FC8CC2B6D795A1} datatype={} isdefault={true} langid={en} description={} validfrom={2017-11-17 08:05:44 CET} validto={} changed={2018-06-22 11:16:18 CEST} changedby={nvcuong01} properties={} id={}

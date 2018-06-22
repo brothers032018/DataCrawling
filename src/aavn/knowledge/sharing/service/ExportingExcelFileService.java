@@ -18,7 +18,7 @@ import com.aspose.cells.Style;
 import com.aspose.cells.StyleFlag;
 import com.aspose.cells.Workbook;
 import com.aspose.cells.Worksheet;
-import com.nova.devday.CandidateInfo;
+import com.aavn.sharing.CandidateInfo;
 
 import ch.ivyteam.ivy.ThirdPartyLicenses;
 import ch.ivyteam.ivy.environment.Ivy;
