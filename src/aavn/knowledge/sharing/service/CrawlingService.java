@@ -30,19 +30,23 @@ public class CrawlingService {
 	static CrawlingPersistentService crawlingPersistentService = new CrawlingPersistentService();
 
 	public static void crawlData() throws IOException, ParseException {
-		 String queryUrl = QueryService.buildQuery();
-		Connection.Response login = initEnvironment();
-		// Craw information from page 1
-		crawlDataFromUrl(login, queryUrl, 1);
-		// Craw information from other pages
-		/*Document pageContent = connectWebServer(login, queryUrl);
-		Elements paginationPanel = pageContent.select("div[class=pagination btn-group");
-		Elements paginations = paginationPanel.select("button[data-url]");
-		Integer pageNo = 1;
-		for (Element pagination : paginations) {
-			pageNo++;
-			crawlDataFromUrl(login, SERVER_HOST + pagination.attr("data-url"), pageNo);
-		}*/
+		try {
+			 String queryUrl = QueryService.buildQuery();
+			Connection.Response login = initEnvironment();
+			// Craw information from page 1
+			crawlDataFromUrl(login, queryUrl, 1);
+			// Craw information from other pages
+			/*Document pageContent = connectWebServer(login, queryUrl);
+			Elements paginationPanel = pageContent.select("div[class=pagination btn-group");
+			Elements paginations = paginationPanel.select("button[data-url]");
+			Integer pageNo = 1;
+			for (Element pagination : paginations) {
+				pageNo++;
+				crawlDataFromUrl(login, SERVER_HOST + pagination.attr("data-url"), pageNo);
+			}*/
+		} catch (Exception e) {
+			Ivy.log().info("Cannot crawl data " + e);
+		}
 	}
 
 	private static Connection.Response initEnvironment() throws IOException {
